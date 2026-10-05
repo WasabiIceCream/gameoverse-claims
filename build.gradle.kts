@@ -15,7 +15,7 @@ dependencies {
     implementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
     implementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
     // Compile-only against the exact jar the server runs: its addon API (claim action listener, chunk access overrider).
-    compileOnly(files("../../fabric 26.1/mods/open-parties-and-claims-fabric-26.1.2-0.31.6.jar"))
+    compileOnly(files("../../fabric 26.1/mods/open-parties-and-claims-fabric-26.1.2-0.32.7.jar"))
 }
 
 java {

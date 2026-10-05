@@ -37,7 +37,7 @@ Commands need permission level 2 (console, or a LuckPerms grant).
 ## Build
 
 `sh ./gradlew build` (JDK 25+). Compiles against the server's OPAC jar by path
-(`../../fabric 26.1/mods/open-parties-and-claims-fabric-26.1.2-0.31.6.jar`): update the path when OPAC updates, and
+(`../../fabric 26.1/mods/open-parties-and-claims-fabric-26.1.2-0.32.7.jar`): update the path when OPAC updates, and
 recheck `IClaimActionListenerAPI`/`IChunkAccessOverriderAPI`, `ServerClaimsManager.tryToClaimHelper` (listeners
 are only consulted outside claim admin mode, for `CLAIM`) and the two `ChunkProtection` methods the mixin wraps.
 
