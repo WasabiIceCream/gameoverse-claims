@@ -108,12 +108,12 @@ public final class StructureScan {
     }
 
     /**
-     * Whether {@code at} is inside (+1 block) an underground piece of this chunk: one that doesn't reach the surface,
-     * so standing under a surface building's roof doesn't count.
+     * Whether {@code at} is inside (grown by {@code margin} blocks) an underground piece of this chunk: one that doesn't
+     * reach the surface, so standing under a surface building's roof doesn't count.
      */
-    public static boolean insideUndergroundPiece(ServerLevel level, int chunkX, int chunkZ, BlockPos at) {
+    public static boolean insideUndergroundPiece(ServerLevel level, int chunkX, int chunkZ, BlockPos at, int margin) {
         for (Piece piece : pieces(level, chunkX, chunkZ)) {
-            if (piece.box().inflatedBy(1).isInside(at) && !reachesSurface(level, piece, chunkX, chunkZ)) return true;
+            if (piece.box().inflatedBy(margin).isInside(at) && !reachesSurface(level, piece, chunkX, chunkZ)) return true;
         }
         return false;
     }

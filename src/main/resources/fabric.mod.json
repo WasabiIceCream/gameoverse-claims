@@ -21,5 +21,8 @@
   },
   "recommends": {
     "openpartiesandclaims": ">=0.31.6"
-  }
+  },
+  "mixins": [
+    "gameoverse_claims.mixins.json"
+  ]
 }

@@ -119,7 +119,7 @@ public final class GameoverseClaims implements ModInitializer {
         ChunkPos chunk = ChunkPos.containing(at);
         List<StructureScan.Piece> pieces = StructureScan.pieces(level, chunk.x(), chunk.z());
         List<StructureScan.Piece> surface = StructureScan.surfacePieces(level, chunk.x(), chunk.z());
-        boolean inside = StructureScan.insideUndergroundPiece(level, chunk.x(), chunk.z(), at);
+        boolean inside = StructureScan.insideUndergroundPiece(level, chunk.x(), chunk.z(), at, 1);
         int depth = StructureScan.surface(level, at.getX(), at.getZ()) - at.getY();
         StringBuilder out = new StringBuilder("Chunk " + chunk.x() + ", " + chunk.z() + ": ");
         if (pieces.isEmpty()) out.append("no structures, claimable.");

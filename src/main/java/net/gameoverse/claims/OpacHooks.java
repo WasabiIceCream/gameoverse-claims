@@ -41,6 +41,10 @@ final class OpacHooks {
         OPACServerAddonRegister.EVENT.register(context -> {
             context.getClaimActionListenerManagerAPI().register(new StructureClaimBlocker());
             context.getChunkAccessOverriderManagerAPI().register(new UndergroundAccess());
+            long wrapped = java.util.Arrays.stream(xaero.pac.common.server.claims.protection.ChunkProtection.class.getDeclaredMethods())
+                .filter(m -> m.getName().contains("gameoverse_claims$record")).count();
+            if (wrapped == 2) GameoverseClaims.LOG.info("Block and entity checks in claims use the target's position (ChunkProtection wrapped)");
+            else GameoverseClaims.LOG.warn("Only {} of 2 ChunkProtection checks wrapped (OPAC changed?): those fall back to the player's position", wrapped);
         });
     }
 
@@ -94,10 +98,13 @@ final class OpacHooks {
             if (claimConfig == null || SpecialClaimOwners.SERVER.equals(claimConfig.getPlayerId())) return current;
             if (!(player.level() instanceof ServerLevel level) || !level.dimension().identifier().equals(dimension)) return current;
             if (!server.isSameThread() || level.dimensionType().hasCeiling()) return current;
-            BlockPos at = player.blockPosition();
+            // A block or entity check: the block or entity itself must be in the structure. Anything else (item use):
+            // the player must stand in it, reaching into the claimed chunk from inside.
+            BlockPos target = TargetPos.get();
+            boolean known = target != null && (target.getX() >> 4) == chunkX && (target.getZ() >> 4) == chunkZ;
+            BlockPos at = known ? target : player.blockPosition();
             if (at.getY() > StructureScan.surface(level, at.getX(), at.getZ()) - Config.INSTANCE.undergroundAccessDepth) return current;
-            // The target chunk's pieces: the player stands in one of them, reaching into the claimed chunk from inside it.
-            return StructureScan.insideUndergroundPiece(level, chunkX, chunkZ, at) ? ALLOW : current;
+            return StructureScan.insideUndergroundPiece(level, chunkX, chunkZ, at, known ? 0 : 1) ? ALLOW : current;
         }
     }
 }
