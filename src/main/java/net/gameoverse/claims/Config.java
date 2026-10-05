@@ -39,7 +39,7 @@ public final class Config {
         "formationsnether:quartz_spikes", "formationsnether:ore_shard", "formationsnether:large_tree",
         "fishofthieves:guardian_fruit_tree");
     /** Bonus chunk claims one Land Deed adds. */
-    public int deedClaims = 50;
+    public int deedClaims = 9;
     /** Land Deeds only work for players who can claim at all (vouched or verified: their base limit is above 0). */
     public boolean deedNeedsBaseLimit = true;
     /** Chance of a Land Deed in each Locked Chest tier's loot. */

@@ -19,8 +19,8 @@ sides: the server runs the rules, and clients need the jar only for the Land Dee
 - **Ignored structures** (`ignoredStructures`, `*` wildcards and `#tags`): decoration (trees, logs, spikes), fossils,
   buried treasure and ruined portals never count.
 - **Extra claims.** OPAC's per-player `claims.bonusChunkClaims` adds to the limit LuckPerms sets (`xaero.pac_max_claims`
-  meta: 500 vouched, 5,000 Discord-verified). Two ways to raise it:
-  - **Land Deed** item: right-click to add `deedClaims` (50) chunks, for good. Only works for players who can claim
+  meta: 36 vouched, 100 Discord-verified). Two ways to raise it:
+  - **Land Deed** item: right-click to add `deedClaims` (9) chunks, for good. Only works for players who can claim
     at all (`deedNeedsBaseLimit`). Drops from Locked Chests (`lockedChestDeedChance`: 5/10/20/35/60% by tier).
   - `/gameoverse_claims bonus <player> [add|set <chunks>]` (works for offline players).
 - **Report on existing claims**: `/gameoverse_claims report` checks every player claim a few chunks per tick and writes
