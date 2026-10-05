@@ -1,0 +1,8 @@
+{
+  "item.gameoverse_claims.land_deed": "Land Deed",
+  "item.gameoverse_claims.land_deed.tooltip": "Use to raise how much land you can claim",
+  "message.gameoverse_claims.structure": "%s can't be claimed: structures stay open to everyone",
+  "message.gameoverse_claims.deed_used": "Your claim limit rose by %s chunks (now %s)",
+  "message.gameoverse_claims.deed_unverified": "You can't claim land yet, so the deed can't help: get vouched or verify on Discord first",
+  "message.gameoverse_claims.deed_failed": "The deed couldn't be used, please tell an admin"
+}

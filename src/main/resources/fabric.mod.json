@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "gameoverse_claims",
+  "version": "${version}",
+  "name": "Gameoverse Claims",
+  "description": "Open Parties and Claims rules for Gameoverse: surface structures can't be claimed, underground ones stay open to explorers, and Land Deeds raise a player's claim limit.",
+  "authors": [
+    "Gameoverse"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.gameoverse.claims.GameoverseClaims"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19",
+    "fabric-api": "*",
+    "minecraft": "~26.1"
+  },
+  "recommends": {
+    "openpartiesandclaims": ">=0.31.6"
+  }
+}
