@@ -1,0 +1,8 @@
+{
+  "item.gameoverse_claims.land_deed": "土地の権利書",
+  "item.gameoverse_claims.land_deed.tooltip": "使うと保護できる土地が増える",
+  "message.gameoverse_claims.structure": "%s は保護できません: 構造物は誰でも入れるように開放されています",
+  "message.gameoverse_claims.deed_used": "保護できるチャンク数が %s 増えました (現在 %s)",
+  "message.gameoverse_claims.deed_unverified": "まだ土地を保護できないため、権利書は使えません: 先に vouch を受けるか Discord で認証してください",
+  "message.gameoverse_claims.deed_failed": "権利書を使えませんでした。管理者に知らせてください"
+}
